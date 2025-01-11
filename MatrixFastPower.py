@@ -19,3 +19,17 @@ def mat_pow(a: list, n: int) -> list: # 矩阵幂运算 a ^ n = res
         n >>= 1
         a = mat_mul(a, a)
     return res
+
+
+
+import numpy as np
+
+def mat_pow(a: list, n: int, MOD = 10 ** 9 + 7) -> list: # 矩阵幂运算 a ^ n = res
+    a = np.array(a, dtype=object)
+    res = np.eye(a.shape[0], dtype=object)
+    while n:
+        if n & 1:
+            res = np.dot(res, a) % MOD
+        n >>= 1
+        a = np.dot(a, a) % MOD
+    return res.tolist()

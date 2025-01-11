@@ -10,12 +10,13 @@ class UnionFindSet:
 
     def find(self, x: int) -> int:
         """查找元素x所在集合的代表元素"""
-        if x == self.fa[x]:
-            return x
-        else:
-            self.fa[x] = self.find(self.fa[x])
-            return self.fa[x]
-    
+        rt, fa = x, self.fa
+        while fa[rt] != rt:
+            rt = fa[rt]
+        while fa[x] != rt:
+            fa[x], x = rt, fa[x]
+        return rt
+
     def union(self, i: int, j: int):
         """合并元素i和j所在的集合"""
         fa, rank, num = self.fa, self.rank, self.num
@@ -28,15 +29,15 @@ class UnionFindSet:
             rank[y] += 1
         if x != y:
             num[x] = num[y] = num[x] + num[y]
-    
+
     def check(self, i: int, j: int) -> bool:
         """判断元素i和j是否属于同一集合"""
-        return self.find(i) == self.find(j)
-    
+        return find(i) == find(j)
+
     def number(self, x: int) -> int:
         """查询元素x所在集合的元素个数"""
         return self.num[self.find(x)]
-    
+
     def total(self) -> int:
         """查询不同集合的总数"""
         for i in range(self.n):

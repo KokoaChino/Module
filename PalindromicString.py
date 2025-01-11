@@ -1,5 +1,5 @@
 def get_isP(s: str) -> list:
-    """可以判断子串 s[i][j] 是否是回文的"""
+    """判断子串 s[i:j] 是否是回文的"""
     n = len(s)
     f = [[True] * n for _ in range(n)]
     for j in range(1, n):

@@ -1,4 +1,4 @@
-import heapq
+from heapq import heappush, heappop
 from math import inf
 from collections import deque
 
@@ -17,12 +17,13 @@ def dijkstra(mat: list, a: int) -> list:
     return ans
 
 def dijkstra(g: list, a: int) -> list:
+    """堆优化的Dijkstra单源最短路算法"""
     n = len(g)
     ans, st, q = [inf] * n, [False] * n, []
     ans[a] = 0
-    heapq.heappush(q, (0, a))
+    heappush(q, (0, a))
     while q:
-        dist, x = heapq.heappop(q)
+        dist, x = heappop(q)
         if st[x]:
             continue
         st[x] = True
@@ -30,5 +31,5 @@ def dijkstra(g: list, a: int) -> list:
             y, d = t
             if ans[y] > ans[x] + d:
                 ans[y] = ans[x] + d
-                heapq.heappush(q, (ans[y], y))
+                heappush(q, (ans[y], y))
     return ans
