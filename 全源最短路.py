@@ -1,5 +1,4 @@
-def floyd(mat: list) -> None:
-    """Floyd全源最短路算法"""
+def floyd(mat: list) -> None: # 全源最短路
     n = len(mat)
     for k in range(n):
         for i in range(n):

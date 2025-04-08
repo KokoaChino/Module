@@ -1,5 +1,4 @@
-def get_primes(n: int) -> list:
-    """质因数分解"""
+def get_primes(n: int) -> list: # 质因数分解
     i, ans = 2, []
     while i ** 2 <= n:
         if n % i == 0:

@@ -1,7 +1,6 @@
 from random import randint
 
-class StringHash:
-    """字符串哈希"""
+class StringHash: # 字符串哈希
 
     BASE, MOD = randint(8 * 10 ** 8, 9 * 10 ** 8), 1070777777
 
@@ -13,5 +12,5 @@ class StringHash:
             self.pow_base[i + 1] = self.pow_base[i] * BASE % MOD
             self.pre_hash[i + 1] = (self.pre_hash[i] * BASE + ord(c)) % MOD
 
-    def sub_hash(self, l: int, r: int) -> int: # 子字符串的哈希值
+    def sub_hash(self, l: int, r: int) -> int: # 计算子字符串的哈希值
         return (self.pre_hash[r + 1] - self.pre_hash[l] * self.pow_base[r - l + 1]) % StringHash.MOD

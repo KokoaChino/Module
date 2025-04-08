@@ -1,7 +1,6 @@
 from functools import cache
 
-def DigitalDP(n: int) -> int:
-    """数位DP通用模板"""
+def digitalDP(n: int) -> int: # 数位 DP 通用模板
     s = str(n)
 
     @cache

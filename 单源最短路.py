@@ -2,8 +2,7 @@ from heapq import heappush, heappop
 from math import inf
 from collections import deque
 
-def dijkstra(mat: list, a: int) -> list:
-    """Dijkstra单源最短路算法"""
+def dijkstra(mat: list, a: int) -> list: # 单源最短路
     n = len(mat)
     ans = [inf] * n
     ans[a] = 0
@@ -16,8 +15,7 @@ def dijkstra(mat: list, a: int) -> list:
                 q.append(y)
     return ans
 
-def dijkstra(g: list, a: int) -> list:
-    """堆优化的Dijkstra单源最短路算法"""
+def dijkstra(g: list, a: int) -> list: # 堆优化的单源最短路
     n = len(g)
     ans, st, q = [inf] * n, [False] * n, []
     ans[a] = 0

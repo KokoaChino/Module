@@ -1,5 +1,4 @@
-def get_array(U: int) -> list:
-    """返回所有位于[1, 10 ^ U]内的回文数"""
+def get_array(U: int) -> list: # 返回所有位于 [1, 10 ^ U] 内的回文数
     res = []
     base = 1
     while base <= 10 ** ((U - 1) // 2):

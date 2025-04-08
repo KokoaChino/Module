@@ -1,5 +1,4 @@
-def get_primes(n: int) -> list:
-    """埃氏筛"""
+def get_primes(n: int) -> list: # 埃氏筛
     if n < 2:
         return [False] * (n + 1)
     is_prime = [True] * (n + 1)

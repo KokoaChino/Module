@@ -1,5 +1,4 @@
-def longestCommonSubsequence(arr1: list, arr2: list) -> int:
-    """最长公共子序列"""
+def longest_common_subsequence(arr1: list, arr2: list) -> int: # 最长公共子序列
     f = [0] * (len(arr2) + 1)
     for x in arr1:
         pre = 0

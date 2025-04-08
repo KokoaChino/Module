@@ -1,7 +1,6 @@
 from collections import deque
 
-def get(n: int, edges: list) -> list:
-    """返回该有向无环图的拓扑排序"""
+def get(n: int, edges: list) -> list: # 返回该有向无环图的拓扑排序
     g, deg = [[] for _ in range(n)], [0] * n
     for u, v in edges:
         g[u].append(v)

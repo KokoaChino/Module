@@ -1,5 +1,4 @@
-def KMP(s: str, t: str) -> int:
-    """s：主串 t：目标串"""
+def kmp(s: str, t: str) -> int: # s：主串 t：目标串
     m, n = len(s), len(t)
     if n == 0:
         return -1
