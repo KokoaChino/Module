@@ -19,8 +19,7 @@ input = lambda: sys.stdin.readline().rstrip()
 
 
 def solve() -> None:
-
-
+    pass
 
 
 
