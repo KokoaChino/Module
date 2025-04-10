@@ -10,12 +10,12 @@ class BinaryIndexedTreesSum: # 树状数组 Sum
     
     def query(self, i: int, j = -1) -> int: # 区间查询
         if j < 0:
-            ret = 0
+            ans = 0
             i += 1
             while i > 0:
-                ret += self.d[i]
+                ans += self.d[i]
                 i &= i - 1
-            return ret
+            return ans
         else:
             return self.query(j) - self.query(i - 1)    
     

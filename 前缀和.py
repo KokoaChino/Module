@@ -14,7 +14,7 @@ class OnePrefixSum: # 一维前缀和
     def __init__(self, nums: list):
         p = [0] * (len(nums) + 1)
         for i, v in enumerate(nums):
-            p[i + 1] += p[i] + v
+            p[i + 1] = p[i] + v
         self.P = p
 
     def get_sum(self, i: int, j: int) -> int: # 区间求和
@@ -24,10 +24,10 @@ class OnePrefixSum: # 一维前缀和
 
 class TwoPrefixSum: # 二维前缀和
     def __init__(self, mat: list):
-        m, n = len(mat), len(mat[0])
-        p = [[0] * (n + 1) for _ in range(m + 1)]
-        for i in range(m):
-            for j in range(n):
+        n, m = len(mat), len(mat[0])
+        p = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(n):
+            for j in range(m):
                 p[i + 1][j + 1] = p[i][j + 1] + p[i + 1][j] - p[i][j] + mat[i][j]
         self.P = p
 

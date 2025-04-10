@@ -10,7 +10,7 @@ def dijkstra(mat: list, a: int) -> list: # 单源最短路
     while q:
         x = q.popleft()
         for y, d in enumerate(mat[x]):
-            if ans[x] + d < ans[y]:
+            if ans[y] > ans[x] + d:
                 ans[y] = ans[x] + d
                 q.append(y)
     return ans

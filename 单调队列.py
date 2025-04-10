@@ -6,7 +6,7 @@ def min_sliding_window(nums: list, k: int) -> list: # 滑动窗口最小值
     q = deque()
     for i in range(n - 1, -1, -1):
         max_index = min(i + k - 1, n - 1)
-        while q and q[0] > max_index:
+        if q and q[0] > max_index:
             q.popleft()
         while q and nums[q[-1]] >= nums[i]:
             q.pop()
@@ -20,7 +20,7 @@ def max_sliding_window(nums: list, k: int) -> list: # 滑动窗口最大值
     q = deque()
     for i in range(n - 1, -1, -1):
         max_index = min(i + k - 1, n - 1)
-        while q and q[0] > max_index:
+        if q and q[0] > max_index:
             q.popleft()
         while q and nums[q[-1]] <= nums[i]:
             q.pop()
