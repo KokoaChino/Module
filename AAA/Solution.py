@@ -1,37 +1,19 @@
-import math
-from collections import Counter, defaultdict, deque
-from functools import cache
-from typing import List, Callable
-from math import inf, comb
-# from sortedcontainers import SortedList
-from copy import deepcopy
-from itertools import pairwise, permutations, accumulate
-from heapq import heappush, heappop
+# for _ in range(int(input())):
+#    n, a = int(input()), map(int, input().split())
 
+import sys
+input = lambda: sys.stdin.readline().rstrip()
 MOD = 10 ** 9 + 7
+# sys.setrecursionlimit(10 ** 6 + 10)
 
-
-
-def DigitalDP(n: int) -> int:
-    """数位DP通用模板"""
-    s = str(n)
-
-    @cache
-    def dfs(i: int, is_limit: bool, is_num: bool, p: int, sx: int) -> int:
-        if i == len(s):
-            if not is_num:
-                return 0
-            else:
-                return p % sx == 0
-        ret = 0 if is_num else dfs(i + 1, False, False, 1, 0)
-        up = int(s[i]) if is_limit else 9
-        for j in range(1 - int(is_num), up + 1):
-            ret += dfs(i + 1, j == up and is_limit, True, p * j, sx + j)
-        return ret
-
-    return dfs(0, True, False, 1, 0)
-
-
-class Solution:
-    def beautifulNumbers(self, l: int, r: int) -> int:
-        return DigitalDP(r) - DigitalDP(l - 1)
+# from copy import deepcopy
+# from functools import lru_cache
+# from heapq import heappush, heappop
+# from decimal import Decimal, getcontext
+# from bisect import bisect_left, bisect_right
+# from datetime import datetime, date, timedelta
+# from math import inf, gcd, sqrt, ceil, floor, log
+# from collections import Counter, defaultdict, deque
+# from random import randint, shuffle, choice, choices, sample
+# from itertools import count, permutations, combinations, combinations_with_replacement
+# getcontext().prec = 50

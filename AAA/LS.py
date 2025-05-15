@@ -3,7 +3,7 @@
 
 import sys
 input = lambda: sys.stdin.readline().rstrip()
-# sys.setrecursionlimit(10 ** 9)
+# sys.setrecursionlimit(10 ** 6 + 10)
 
 # from copy import deepcopy
 # from functools import lru_cache
@@ -18,11 +18,12 @@ input = lambda: sys.stdin.readline().rstrip()
 # getcontext().prec = 50
 
 
-def solve() -> None:
-    pass
+def solve():
+    a = list(map(int, input().split('@')))
+    print(sum(a))
 
 
 
-is_more = 0
+is_more = 1
 for _ in range(int(input()) if is_more else 1):
     solve()

@@ -13,17 +13,6 @@ input = lambda: sys.stdin.readline().rstrip()
 # from datetime import datetime, date, timedelta
 # from math import inf, gcd, sqrt, ceil, floor, log
 # from collections import Counter, defaultdict, deque
-# from itertools import count, permutations, combinations
 # from random import randint, shuffle, choice, choices, sample
+# from itertools import count, permutations, combinations, combinations_with_replacement
 # getcontext().prec = 50
-
-
-def solve():
-    pass
-
-
-
-is_more = 0
-for _ in range(int(input()) if is_more else 1):
-    solve()
-
